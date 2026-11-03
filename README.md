@@ -1,5 +1,7 @@
 # Aria2DM
 
+<img width="1058" height="632" alt="explorer_0suE5g07pU" src="https://github.com/user-attachments/assets/9b79e8a0-6f4e-45d1-96dc-016051ee029d" />
+
 ### A lightweight, native Windows download manager powered by aria2.
 
 **Aria2DM** is a native Windows download manager built around the powerful [aria2](https://github.com/aria2/aria2) download engine. It combines aria2's multi-protocol downloading capabilities with a desktop application, browser integration, and specialized download-provider resolvers.
