@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Aria2DM Browser Bridge",
+  "version": "1.0.0",
+  "description": "Sends clicked links and browser downloads to Aria2DM.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAytJsvFy8wVjojHIBJ+7wOo05uoQwV6F5x05R9bB/yle4jtLpJgcGx7s+DSOU5fMCYSD2v/AwEbDbmyQKMud2+Nths7ixRUXkmgKIw8PvGZhmUiuKse3L12PZcvevJ/WAL5aQXcNEP+K50jcEdOojgsAXh8GduG1qDy3R3cH+SWL+NEVD5K6Ef7CJZw1Bpp5ulF6taOT5EucFmGM4x7DeTEwIVGKLfGfMHrGxtKchcknTLZX6OBpM0qZB89X6QtKFeyUTfuuoVf5PYN0XOK7XEzW/IJnle8EeZN1Logj7/HTQM44buuX2CWsbjDeaTNi6JgAlkkLVp5yK0WHPsOIg2QIDAQAB",
+  "permissions": ["nativeMessaging", "downloads", "contextMenus", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [
+    {
+      "matches": [
+        "*://drive.google.com/*",
+        "*://mega.nz/*",
+        "*://*.mega.nz/*",
+        "*://www.mediafire.com/*",
+        "*://mediafire.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Aria2DM Browser Bridge",
+  "version": "1.0.0",
+  "description": "Sends clicked links and browser downloads to Aria2DM.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "aria2dm@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": ["nativeMessaging", "downloads", "contextMenus", "storage", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://drive.google.com/*",
+        "*://mega.nz/*",
+        "*://*.mega.nz/*",
+        "*://www.mediafire.com/*",
+        "*://mediafire.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

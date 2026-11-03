@@ -1,0 +1,47 @@
+#include <windows.h>
+#include "resource.h"
+
+IDI_APP_ICON ICON "app.ico"
+
+// The aria2 download engine is embedded into the executable so the app ships
+// as a single self-contained binary. It is unpacked to the app data folder at
+// run time and started hidden.
+IDR_ARIA2_ENGINE RCDATA "..\\third_party\\aria2\\aria2c.exe"
+IDR_ARIA2_LICENSE RCDATA "..\\third_party\\aria2\\COPYING"
+
+// Browser bridge extension shipped inside the executable.
+IDR_EXT_CHROME_MANIFEST RCDATA "browser\\chromium\\manifest.json"
+IDR_EXT_CHROME_BACKGROUND RCDATA "browser\\chromium\\background.js"
+IDR_EXT_CHROME_CONTENT RCDATA "browser\\chromium\\content.js"
+IDR_EXT_FIREFOX_MANIFEST RCDATA "browser\\firefox\\manifest.json"
+IDR_EXT_FIREFOX_BACKGROUND RCDATA "browser\\firefox\\background.js"
+IDR_EXT_FIREFOX_CONTENT RCDATA "browser\\firefox\\content.js"
+IDR_EXT_README RCDATA "browser\\README.txt"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 0,1,0,0
+PRODUCTVERSION 0,1,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Aria2DM"
+            VALUE "FileDescription", "Aria2DM download manager"
+            VALUE "FileVersion", "0.1.0"
+            VALUE "InternalName", "aria2dm"
+            VALUE "OriginalFilename", "aria2dm.exe"
+            VALUE "ProductName", "Aria2DM"
+            VALUE "ProductVersion", "0.1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
